@@ -7,6 +7,7 @@ export const useAuthStore=create((set,get)=>({
     isLoggingIn:false,
     isUpdatingProfile:false,
     isCheckingAuth:true,
+    onlineUsers:[],
     
     checkAuth:async()=>{
         try{
@@ -32,6 +33,8 @@ export const useAuthStore=create((set,get)=>({
        set({authUser:res.data});
        toast.success("Account created successfully");
       }catch(error){
+        console.log("Error from signup",error);
+        
         toast.error(error.response.data.message)
       }finally{
         set({isSigningUp:false});

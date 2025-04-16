@@ -6,7 +6,7 @@ import cookieParser from "cookie-parser";
 import cors from "cors"
 import messageRoutes from "./routes/message.route.js";
 dotenv.config()
-const app=express()
+import {app,server} from './lib/socket.js'
 
 const PORT=process.env.PORT
 
@@ -20,7 +20,7 @@ app.use(cors({
 app.use("/api/auth",authRoutes)
 app.use("/api/messages",messageRoutes)
 
-app.listen(5001,()=>{
+server.listen(5001,()=>{
     console.log(`Server is roaming on port ${PORT}`);
     connectDB();
     

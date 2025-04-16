@@ -1,6 +1,7 @@
 import User from "../models/user.model.js";
 import Message from "../models/message.model.js";
 import cloudinary from "../lib/cloudinary.js"
+import { getReceiverSocketId, io } from "../lib/socket.js";
 /*Every single user but not ourselves*/
 export const getUsersForSidebar = async (req, res) => {
   try {
@@ -76,8 +77,12 @@ export const sendMessage = async (req, res) => {
     
        
     await newMessage.save();
-    //todo:real time functionality goes here=>socket.io
+  
+       const receiverSocketId =getReceiverSocketId(receiverId)
+       if(receiverSocketId){
+        io.to(receiverSocketId).emit("newMessage",newMessage) //because this is not a group chat this is a private chat, so only send the message to the receiver
 
+       }
     res.status(201).json(newMessage);
   } catch (error) {
     console.log("Error in sendMessage controller:", error.message);

@@ -9,7 +9,7 @@ dotenv.config()
 import {app,server} from './lib/socket.js'
 import path from "path";
 
-const PORT=process.env.PORT
+const PORT=process.env.PORT||5001;
 const __dirname=path.resolve()
 
 app.use(express.json())
@@ -33,7 +33,7 @@ if (process.env.NODE_ENV === "production") {
   
 
 
-server.listen(5001,()=>{
+server.listen(PORT,()=>{
     console.log(`Server is roaming on port ${PORT}`);
     connectDB();
     

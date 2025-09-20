@@ -2,8 +2,6 @@
 
 A modern, full-stack real-time chat application built with the MERN stack. Chatzy provides seamless communication with instant messaging, image sharing, and a beautiful, responsive interface.
 
-![Chatzy Demo](https://via.placeholder.com/800x400/4F46E5/FFFFFF?text=Chatzy+Chat+App)
-
 ## ✨ Features
 
 - **🔐 Authentication & Authorization**

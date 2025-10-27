@@ -264,20 +264,5 @@ CLOUDINARY_API_KEY=your-cloudinary-api-key
 CLOUDINARY_API_SECRET=your-cloudinary-api-secret
 ```
 
-
-
-## 👨‍💻 Author
-
-**Samanvitha Channagiri**
-- GitHub: [@samanvitha-channagiri](https://github.com/samanvitha-channagiri)
-- Email: [your-email@example.com](mailto:your-email@example.com)
-
-## 🙏 Acknowledgments
-
-- [Socket.io](https://socket.io/) for real-time communication
-- [DaisyUI](https://daisyui.com/) for beautiful UI components
-- [Cloudinary](https://cloudinary.com/) for image storage
-- [Lucide](https://lucide.dev/) for beautiful icons
-
 ---
 
